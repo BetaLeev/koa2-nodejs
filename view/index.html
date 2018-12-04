@@ -1,0 +1,25 @@
+  <%-include('./header')%>
+  <h2><a href="/add">添加</a></h2>
+<table class="table">
+  <thead>
+    <th>name</th>
+    <th>age</th>
+    <th>sex</th>
+    <th>operator</th>
+  </thead>
+  <tbody>
+    {{each list}}
+    <tr>
+      <td>{{$value.name}}</td>
+      <td>{{$value.sex}}</td>
+      <td>{{$value.age}}</td>
+      <td>
+       <a href="/edit?id={{@$value._id}}">编辑</a>
+       <a href="/delete?id={{@$value._id}}">删除</a>
+      </td>
+    </tr>
+  </tbody>
+    {{/each}}
+</table>
+</body>
+</html>
